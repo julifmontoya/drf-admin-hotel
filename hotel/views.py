@@ -1,4 +1,4 @@
-from rest_framework.generics import ListAPIView, DestroyAPIView, CreateAPIView, UpdateAPIView
+from rest_framework.generics import ListAPIView, DestroyAPIView, CreateAPIView, RetrieveUpdateAPIView
 from .serializers import HotelListSerializer, HotelSerializer
 from .models import Hotel
 
@@ -12,7 +12,7 @@ class HotelCreate(CreateAPIView):
     permission_classes = ()
 
 
-class HotelDetailProv(UpdateAPIView):
+class HotelDetailProv(RetrieveUpdateAPIView):
     serializer_class = HotelSerializer  
     queryset = Hotel.objects.all()  
     permission_classes = ()
